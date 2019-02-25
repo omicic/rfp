@@ -1,7 +1,7 @@
 package rfp.loyality.service.impl;
 
 import rfp.loyality.service.RfpEventAttendenceService;
-import rfp.loyality.domain.RfpEventAttendence;
+import rfp.loyality.domain.RfpEventAttendance;
 import rfp.loyality.repository.RfpEventAttendenceRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,7 +35,7 @@ public class RfpEventAttendenceServiceImpl implements RfpEventAttendenceService 
      * @return the persisted entity
      */
     @Override
-    public RfpEventAttendence save(RfpEventAttendence rfpEventAttendence) {
+    public RfpEventAttendance save(RfpEventAttendance rfpEventAttendence) {
         log.debug("Request to save RfpEventAttendence : {}", rfpEventAttendence);
         return rfpEventAttendenceRepository.save(rfpEventAttendence);
     }
@@ -48,7 +48,7 @@ public class RfpEventAttendenceServiceImpl implements RfpEventAttendenceService 
      */
     @Override
     @Transactional(readOnly = true)
-    public Page<RfpEventAttendence> findAll(Pageable pageable) {
+    public Page<RfpEventAttendance> findAll(Pageable pageable) {
         log.debug("Request to get all RfpEventAttendences");
         return rfpEventAttendenceRepository.findAll(pageable);
     }
@@ -62,7 +62,7 @@ public class RfpEventAttendenceServiceImpl implements RfpEventAttendenceService 
      */
     @Override
     @Transactional(readOnly = true)
-    public Optional<RfpEventAttendence> findOne(Long id) {
+    public Optional<RfpEventAttendance> findOne(Long id) {
         log.debug("Request to get RfpEventAttendence : {}", id);
         return rfpEventAttendenceRepository.findById(id);
     }

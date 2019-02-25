@@ -2,7 +2,7 @@ package rfp.loyality.web.rest;
 
 import rfp.loyality.RfpApp;
 
-import rfp.loyality.domain.RfpEventAttendence;
+import rfp.loyality.domain.RfpEventAttendance;
 import rfp.loyality.repository.RfpEventAttendenceRepository;
 import rfp.loyality.service.RfpEventAttendenceService;
 import rfp.loyality.web.rest.errors.ExceptionTranslator;
@@ -67,7 +67,7 @@ public class RfpEventAttendenceResourceIntTest {
 
     private MockMvc restRfpEventAttendenceMockMvc;
 
-    private RfpEventAttendence rfpEventAttendence;
+    private RfpEventAttendance rfpEventAttendence;
 
     @Before
     public void setup() {
@@ -87,8 +87,8 @@ public class RfpEventAttendenceResourceIntTest {
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
-    public static RfpEventAttendence createEntity(EntityManager em) {
-        RfpEventAttendence rfpEventAttendence = new RfpEventAttendence()
+    public static RfpEventAttendance createEntity(EntityManager em) {
+        RfpEventAttendance rfpEventAttendence = new RfpEventAttendance()
             .attendenceDate(DEFAULT_ATTENDENCE_DATE);
         return rfpEventAttendence;
     }
@@ -110,9 +110,9 @@ public class RfpEventAttendenceResourceIntTest {
             .andExpect(status().isCreated());
 
         // Validate the RfpEventAttendence in the database
-        List<RfpEventAttendence> rfpEventAttendenceList = rfpEventAttendenceRepository.findAll();
+        List<RfpEventAttendance> rfpEventAttendenceList = rfpEventAttendenceRepository.findAll();
         assertThat(rfpEventAttendenceList).hasSize(databaseSizeBeforeCreate + 1);
-        RfpEventAttendence testRfpEventAttendence = rfpEventAttendenceList.get(rfpEventAttendenceList.size() - 1);
+        RfpEventAttendance testRfpEventAttendence = rfpEventAttendenceList.get(rfpEventAttendenceList.size() - 1);
         assertThat(testRfpEventAttendence.getAttendenceDate()).isEqualTo(DEFAULT_ATTENDENCE_DATE);
     }
 
@@ -131,7 +131,7 @@ public class RfpEventAttendenceResourceIntTest {
             .andExpect(status().isBadRequest());
 
         // Validate the RfpEventAttendence in the database
-        List<RfpEventAttendence> rfpEventAttendenceList = rfpEventAttendenceRepository.findAll();
+        List<RfpEventAttendance> rfpEventAttendenceList = rfpEventAttendenceRepository.findAll();
         assertThat(rfpEventAttendenceList).hasSize(databaseSizeBeforeCreate);
     }
 
@@ -180,7 +180,7 @@ public class RfpEventAttendenceResourceIntTest {
         int databaseSizeBeforeUpdate = rfpEventAttendenceRepository.findAll().size();
 
         // Update the rfpEventAttendence
-        RfpEventAttendence updatedRfpEventAttendence = rfpEventAttendenceRepository.findById(rfpEventAttendence.getId()).get();
+        RfpEventAttendance updatedRfpEventAttendence = rfpEventAttendenceRepository.findById(rfpEventAttendence.getId()).get();
         // Disconnect from session so that the updates on updatedRfpEventAttendence are not directly saved in db
         em.detach(updatedRfpEventAttendence);
         updatedRfpEventAttendence
@@ -192,9 +192,9 @@ public class RfpEventAttendenceResourceIntTest {
             .andExpect(status().isOk());
 
         // Validate the RfpEventAttendence in the database
-        List<RfpEventAttendence> rfpEventAttendenceList = rfpEventAttendenceRepository.findAll();
+        List<RfpEventAttendance> rfpEventAttendenceList = rfpEventAttendenceRepository.findAll();
         assertThat(rfpEventAttendenceList).hasSize(databaseSizeBeforeUpdate);
-        RfpEventAttendence testRfpEventAttendence = rfpEventAttendenceList.get(rfpEventAttendenceList.size() - 1);
+        RfpEventAttendance testRfpEventAttendence = rfpEventAttendenceList.get(rfpEventAttendenceList.size() - 1);
         assertThat(testRfpEventAttendence.getAttendenceDate()).isEqualTo(UPDATED_ATTENDENCE_DATE);
     }
 
@@ -212,7 +212,7 @@ public class RfpEventAttendenceResourceIntTest {
             .andExpect(status().isBadRequest());
 
         // Validate the RfpEventAttendence in the database
-        List<RfpEventAttendence> rfpEventAttendenceList = rfpEventAttendenceRepository.findAll();
+        List<RfpEventAttendance> rfpEventAttendenceList = rfpEventAttendenceRepository.findAll();
         assertThat(rfpEventAttendenceList).hasSize(databaseSizeBeforeUpdate);
     }
 
@@ -230,17 +230,17 @@ public class RfpEventAttendenceResourceIntTest {
             .andExpect(status().isOk());
 
         // Validate the database is empty
-        List<RfpEventAttendence> rfpEventAttendenceList = rfpEventAttendenceRepository.findAll();
+        List<RfpEventAttendance> rfpEventAttendenceList = rfpEventAttendenceRepository.findAll();
         assertThat(rfpEventAttendenceList).hasSize(databaseSizeBeforeDelete - 1);
     }
 
     @Test
     @Transactional
     public void equalsVerifier() throws Exception {
-        TestUtil.equalsVerifier(RfpEventAttendence.class);
-        RfpEventAttendence rfpEventAttendence1 = new RfpEventAttendence();
+        TestUtil.equalsVerifier(RfpEventAttendance.class);
+        RfpEventAttendance rfpEventAttendence1 = new RfpEventAttendance();
         rfpEventAttendence1.setId(1L);
-        RfpEventAttendence rfpEventAttendence2 = new RfpEventAttendence();
+        RfpEventAttendance rfpEventAttendence2 = new RfpEventAttendance();
         rfpEventAttendence2.setId(rfpEventAttendence1.getId());
         assertThat(rfpEventAttendence1).isEqualTo(rfpEventAttendence2);
         rfpEventAttendence2.setId(2L);

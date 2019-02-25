@@ -1,6 +1,6 @@
 package rfp.loyality.repository;
 
-import rfp.loyality.domain.RfpEventAttendence;
+import rfp.loyality.domain.RfpEventAttendance;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface RfpEventAttendenceRepository extends JpaRepository<RfpEventAttendence, Long> {
+public interface RfpEventAttendenceRepository extends JpaRepository<RfpEventAttendance, Long> {
 
 }

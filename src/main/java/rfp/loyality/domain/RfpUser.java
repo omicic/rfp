@@ -33,8 +33,10 @@ public class RfpUser implements Serializable {
 
     @OneToMany(mappedBy = "rfpUser")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<RfpEventAttendence> rfpEventAttendances = new HashSet<>();
+    private Set<RfpEventAttendance> rfpEventAttendances = new HashSet<>();
+    
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
+    
     public Long getId() {
         return id;
     }
@@ -69,28 +71,28 @@ public class RfpUser implements Serializable {
         this.location = rfpLocation;
     }
 
-    public Set<RfpEventAttendence> getRfpEventAttendances() {
+    public Set<RfpEventAttendance> getRfpEventAttendances() {
         return rfpEventAttendances;
     }
 
-    public RfpUser rfpEventAttendances(Set<RfpEventAttendence> rfpEventAttendences) {
+    public RfpUser rfpEventAttendances(Set<RfpEventAttendance> rfpEventAttendences) {
         this.rfpEventAttendances = rfpEventAttendences;
         return this;
     }
 
-    public RfpUser addRfpEventAttendance(RfpEventAttendence rfpEventAttendence) {
+    public RfpUser addRfpEventAttendance(RfpEventAttendance rfpEventAttendence) {
         this.rfpEventAttendances.add(rfpEventAttendence);
         rfpEventAttendence.setRfpUser(this);
         return this;
     }
 
-    public RfpUser removeRfpEventAttendance(RfpEventAttendence rfpEventAttendence) {
+    public RfpUser removeRfpEventAttendance(RfpEventAttendance rfpEventAttendence) {
         this.rfpEventAttendances.remove(rfpEventAttendence);
         rfpEventAttendence.setRfpUser(null);
         return this;
     }
 
-    public void setRfpEventAttendances(Set<RfpEventAttendence> rfpEventAttendences) {
+    public void setRfpEventAttendances(Set<RfpEventAttendance> rfpEventAttendences) {
         this.rfpEventAttendances = rfpEventAttendences;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove

@@ -35,7 +35,7 @@ public class RfpEvent implements Serializable {
 
     @OneToMany(mappedBy = "rfpEvent")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<RfpEventAttendence> rfpEventAttendances = new HashSet<>();
+    private Set<RfpEventAttendance> rfpEventAttendances = new HashSet<>();
     @ManyToOne
     @JsonIgnoreProperties("rfpEvents")
     private RfpLocation rfpLocation;
@@ -75,28 +75,28 @@ public class RfpEvent implements Serializable {
         this.eventCode = eventCode;
     }
 
-    public Set<RfpEventAttendence> getRfpEventAttendances() {
+    public Set<RfpEventAttendance> getRfpEventAttendances() {
         return rfpEventAttendances;
     }
 
-    public RfpEvent rfpEventAttendances(Set<RfpEventAttendence> rfpEventAttendences) {
+    public RfpEvent rfpEventAttendances(Set<RfpEventAttendance> rfpEventAttendences) {
         this.rfpEventAttendances = rfpEventAttendences;
         return this;
     }
 
-    public RfpEvent addRfpEventAttendance(RfpEventAttendence rfpEventAttendence) {
+    public RfpEvent addRfpEventAttendance(RfpEventAttendance rfpEventAttendence) {
         this.rfpEventAttendances.add(rfpEventAttendence);
         rfpEventAttendence.setRfpEvent(this);
         return this;
     }
 
-    public RfpEvent removeRfpEventAttendance(RfpEventAttendence rfpEventAttendence) {
+    public RfpEvent removeRfpEventAttendance(RfpEventAttendance rfpEventAttendence) {
         this.rfpEventAttendances.remove(rfpEventAttendence);
         rfpEventAttendence.setRfpEvent(null);
         return this;
     }
 
-    public void setRfpEventAttendances(Set<RfpEventAttendence> rfpEventAttendences) {
+    public void setRfpEventAttendances(Set<RfpEventAttendance> rfpEventAttendences) {
         this.rfpEventAttendances = rfpEventAttendences;
     }
 

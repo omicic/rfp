@@ -15,7 +15,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "rfp_event_attendence")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class RfpEventAttendence implements Serializable {
+public class RfpEventAttendance implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -47,7 +47,7 @@ public class RfpEventAttendence implements Serializable {
         return attendenceDate;
     }
 
-    public RfpEventAttendence attendenceDate(String attendenceDate) {
+    public RfpEventAttendance attendenceDate(String attendenceDate) {
         this.attendenceDate = attendenceDate;
         return this;
     }
@@ -60,7 +60,7 @@ public class RfpEventAttendence implements Serializable {
         return rfpUser;
     }
 
-    public RfpEventAttendence rfpUser(RfpUser rfpUser) {
+    public RfpEventAttendance rfpUser(RfpUser rfpUser) {
         this.rfpUser = rfpUser;
         return this;
     }
@@ -73,7 +73,7 @@ public class RfpEventAttendence implements Serializable {
         return rfpEvent;
     }
 
-    public RfpEventAttendence rfpEvent(RfpEvent rfpEvent) {
+    public RfpEventAttendance rfpEvent(RfpEvent rfpEvent) {
         this.rfpEvent = rfpEvent;
         return this;
     }
@@ -91,7 +91,7 @@ public class RfpEventAttendence implements Serializable {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        RfpEventAttendence rfpEventAttendence = (RfpEventAttendence) o;
+        RfpEventAttendance rfpEventAttendence = (RfpEventAttendance) o;
         if (rfpEventAttendence.getId() == null || getId() == null) {
             return false;
         }

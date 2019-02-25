@@ -1,6 +1,6 @@
 package rfp.loyality.service;
 
-import rfp.loyality.domain.RfpEventAttendence;
+import rfp.loyality.domain.RfpEventAttendance;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,7 +18,7 @@ public interface RfpEventAttendenceService {
      * @param rfpEventAttendence the entity to save
      * @return the persisted entity
      */
-    RfpEventAttendence save(RfpEventAttendence rfpEventAttendence);
+    RfpEventAttendance save(RfpEventAttendance rfpEventAttendence);
 
     /**
      * Get all the rfpEventAttendences.
@@ -26,7 +26,7 @@ public interface RfpEventAttendenceService {
      * @param pageable the pagination information
      * @return the list of entities
      */
-    Page<RfpEventAttendence> findAll(Pageable pageable);
+    Page<RfpEventAttendance> findAll(Pageable pageable);
 
 
     /**
@@ -35,7 +35,7 @@ public interface RfpEventAttendenceService {
      * @param id the id of the entity
      * @return the entity
      */
-    Optional<RfpEventAttendence> findOne(Long id);
+    Optional<RfpEventAttendance> findOne(Long id);
 
     /**
      * Delete the "id" rfpEventAttendence.

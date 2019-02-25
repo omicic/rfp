@@ -1,7 +1,7 @@
 package rfp.loyality.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-import rfp.loyality.domain.RfpEventAttendence;
+import rfp.loyality.domain.RfpEventAttendance;
 import rfp.loyality.service.RfpEventAttendenceService;
 import rfp.loyality.web.rest.errors.BadRequestAlertException;
 import rfp.loyality.web.rest.util.HeaderUtil;
@@ -48,12 +48,12 @@ public class RfpEventAttendenceResource {
      */
     @PostMapping("/rfp-event-attendences")
     @Timed
-    public ResponseEntity<RfpEventAttendence> createRfpEventAttendence(@RequestBody RfpEventAttendence rfpEventAttendence) throws URISyntaxException {
+    public ResponseEntity<RfpEventAttendance> createRfpEventAttendence(@RequestBody RfpEventAttendance rfpEventAttendence) throws URISyntaxException {
         log.debug("REST request to save RfpEventAttendence : {}", rfpEventAttendence);
         if (rfpEventAttendence.getId() != null) {
             throw new BadRequestAlertException("A new rfpEventAttendence cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        RfpEventAttendence result = rfpEventAttendenceService.save(rfpEventAttendence);
+        RfpEventAttendance result = rfpEventAttendenceService.save(rfpEventAttendence);
         return ResponseEntity.created(new URI("/api/rfp-event-attendences/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -70,12 +70,12 @@ public class RfpEventAttendenceResource {
      */
     @PutMapping("/rfp-event-attendences")
     @Timed
-    public ResponseEntity<RfpEventAttendence> updateRfpEventAttendence(@RequestBody RfpEventAttendence rfpEventAttendence) throws URISyntaxException {
+    public ResponseEntity<RfpEventAttendance> updateRfpEventAttendence(@RequestBody RfpEventAttendance rfpEventAttendence) throws URISyntaxException {
         log.debug("REST request to update RfpEventAttendence : {}", rfpEventAttendence);
         if (rfpEventAttendence.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
-        RfpEventAttendence result = rfpEventAttendenceService.save(rfpEventAttendence);
+        RfpEventAttendance result = rfpEventAttendenceService.save(rfpEventAttendence);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, rfpEventAttendence.getId().toString()))
             .body(result);
@@ -89,9 +89,9 @@ public class RfpEventAttendenceResource {
      */
     @GetMapping("/rfp-event-attendences")
     @Timed
-    public ResponseEntity<List<RfpEventAttendence>> getAllRfpEventAttendences(Pageable pageable) {
+    public ResponseEntity<List<RfpEventAttendance>> getAllRfpEventAttendences(Pageable pageable) {
         log.debug("REST request to get a page of RfpEventAttendences");
-        Page<RfpEventAttendence> page = rfpEventAttendenceService.findAll(pageable);
+        Page<RfpEventAttendance> page = rfpEventAttendenceService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/rfp-event-attendences");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
@@ -104,9 +104,9 @@ public class RfpEventAttendenceResource {
      */
     @GetMapping("/rfp-event-attendences/{id}")
     @Timed
-    public ResponseEntity<RfpEventAttendence> getRfpEventAttendence(@PathVariable Long id) {
+    public ResponseEntity<RfpEventAttendance> getRfpEventAttendence(@PathVariable Long id) {
         log.debug("REST request to get RfpEventAttendence : {}", id);
-        Optional<RfpEventAttendence> rfpEventAttendence = rfpEventAttendenceService.findOne(id);
+        Optional<RfpEventAttendance> rfpEventAttendence = rfpEventAttendenceService.findOne(id);
         return ResponseUtil.wrapOrNotFound(rfpEventAttendence);
     }
 
