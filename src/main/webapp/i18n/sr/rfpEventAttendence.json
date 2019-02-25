@@ -1,0 +1,23 @@
+{
+    "rfpApp": {
+        "rfpEventAttendence": {
+            "home": {
+                "title": "Rfp Event Attendences",
+                "createLabel": "Kreiraj novi Rfp Event Attendence",
+                "createOrEditLabel": "Kreirajte ili izmenite Rfp Event Attendence"
+            },
+            "created": "Kreiran je novi Rfp Event Attendence pod nazivom {{ param }}",
+            "updated": "Rfp Event Attendence pod nazivom {{ param }} je ažuriran",
+            "deleted": "Rfp Event Attendence pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Rfp Event Attendence pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Rfp Event Attendence"
+            },
+            "attendenceDate": "Attendence Date",
+            "rfpUser": "Rfp User",
+            "rfpEvent": "Rfp Event"
+        }
+    }
+}

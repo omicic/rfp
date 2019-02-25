@@ -1,0 +1,23 @@
+{
+    "rfpApp": {
+        "rfpUser": {
+            "home": {
+                "title": "Rfp Users",
+                "createLabel": "Kreiraj novi Rfp User",
+                "createOrEditLabel": "Kreirajte ili izmenite Rfp User"
+            },
+            "created": "Kreiran je novi Rfp User pod nazivom {{ param }}",
+            "updated": "Rfp User pod nazivom {{ param }} je ažuriran",
+            "deleted": "Rfp User pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Rfp User pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Rfp User"
+            },
+            "userName": "User Name",
+            "location": "Location",
+            "rfpEventAttendance": "Rfp Event Attendance"
+        }
+    }
+}

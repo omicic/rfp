@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rfpEventAttendence">
+            <h2><span jhiTranslate="rfpApp.rfpEventAttendence.detail.title">Rfp Event Attendence</span> {{rfpEventAttendence.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rfpApp.rfpEventAttendence.attendenceDate">Attendence Date</span></dt>
+                <dd>
+                    <span>{{rfpEventAttendence.attendenceDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="rfpApp.rfpEventAttendence.rfpUser">Rfp User</span></dt>
+                <dd>
+                    <div *ngIf="rfpEventAttendence.rfpUser">
+                        <a [routerLink]="['/rfp-user', rfpEventAttendence.rfpUser?.id, 'view']">{{rfpEventAttendence.rfpUser?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="rfpApp.rfpEventAttendence.rfpEvent">Rfp Event</span></dt>
+                <dd>
+                    <div *ngIf="rfpEventAttendence.rfpEvent">
+                        <a [routerLink]="['/rfp-event', rfpEventAttendence.rfpEvent?.id, 'view']">{{rfpEventAttendence.rfpEvent?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rfp-event-attendence', rfpEventAttendence.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

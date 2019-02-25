@@ -7,6 +7,10 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entiteti",
+                "rfpUser": "Rfp User",
+                "rfpEventAttendence": "Rfp Event Attendence",
+                "rfpEvent": "Rfp Event",
+                "rfpLocation": "Rfp Location",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -1,0 +1,24 @@
+{
+    "rfpApp": {
+        "rfpEvent": {
+            "home": {
+                "title": "Rfp Events",
+                "createLabel": "Create a new Rfp Event",
+                "createOrEditLabel": "Create or edit a Rfp Event"
+            },
+            "created": "A new Rfp Event is created with identifier {{ param }}",
+            "updated": "A Rfp Event is updated with identifier {{ param }}",
+            "deleted": "A Rfp Event is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Rfp Event {{ id }}?"
+            },
+            "detail": {
+                "title": "Rfp Event"
+            },
+            "eventDate": "Event Date",
+            "eventCode": "Event Code",
+            "rfpEventAttendance": "Rfp Event Attendance",
+            "rfpLocation": "Rfp Location"
+        }
+    }
+}

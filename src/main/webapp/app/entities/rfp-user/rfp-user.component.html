@@ -1,0 +1,60 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="rfpApp.rfpUser.home.title">Rfp Users</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-rfp-user" [routerLink]="['/rfp-user/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="rfpApp.rfpUser.home.createLabel">
+            Create new Rfp User
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="rfpUsers">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="rfpApp.rfpUser.userName">User Name</span></th>
+            <th><span jhiTranslate="rfpApp.rfpUser.location">Location</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rfpUser of rfpUsers ;trackBy: trackId">
+                <td><a [routerLink]="['/rfp-user', rfpUser.id, 'view' ]">{{rfpUser.id}}</a></td>
+                <td>{{rfpUser.userName}}</td>
+                <td>
+                    <div *ngIf="rfpUser.location">
+                        <a [routerLink]="['../rfp-location', rfpUser.location?.id, 'view' ]" >{{rfpUser.location?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/rfp-user', rfpUser.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/rfp-user', rfpUser.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rfp-user/'+ rfpUser.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

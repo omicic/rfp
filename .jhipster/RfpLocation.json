@@ -1,0 +1,30 @@
+{
+    "name": "RfpLocation",
+    "fields": [
+        {
+            "fieldName": "locationName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "runDayOfWeek",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "rfpEvent",
+            "otherEntityName": "rfpEvent",
+            "otherEntityRelationshipName": "rfpLocation"
+        }
+    ],
+    "changelogDate": "20190225092858",
+    "entityTableName": "rfp_location",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

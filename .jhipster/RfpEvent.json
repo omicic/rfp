@@ -1,0 +1,36 @@
+{
+    "name": "RfpEvent",
+    "fields": [
+        {
+            "fieldName": "eventDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "eventCode",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "rfpEventAttendance",
+            "otherEntityName": "rfpEventAttendence",
+            "otherEntityRelationshipName": "rfpEvent"
+        },
+        {
+            "relationshipName": "rfpLocation",
+            "otherEntityName": "rfpLocation",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190225092857",
+    "entityTableName": "rfp_event",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

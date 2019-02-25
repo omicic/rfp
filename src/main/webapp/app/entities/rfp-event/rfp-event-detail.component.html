@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rfpEvent">
+            <h2><span jhiTranslate="rfpApp.rfpEvent.detail.title">Rfp Event</span> {{rfpEvent.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rfpApp.rfpEvent.eventDate">Event Date</span></dt>
+                <dd>
+                    <span>{{rfpEvent.eventDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="rfpApp.rfpEvent.eventCode">Event Code</span></dt>
+                <dd>
+                    <span>{{rfpEvent.eventCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="rfpApp.rfpEvent.rfpLocation">Rfp Location</span></dt>
+                <dd>
+                    <div *ngIf="rfpEvent.rfpLocation">
+                        <a [routerLink]="['/rfp-location', rfpEvent.rfpLocation?.id, 'view']">{{rfpEvent.rfpLocation?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rfp-event', rfpEvent.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

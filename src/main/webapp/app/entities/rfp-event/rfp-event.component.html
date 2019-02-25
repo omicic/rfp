@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="rfpApp.rfpEvent.home.title">Rfp Events</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-rfp-event" [routerLink]="['/rfp-event/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="rfpApp.rfpEvent.home.createLabel">
+            Create new Rfp Event
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="rfpEvents">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="eventDate"><span jhiTranslate="rfpApp.rfpEvent.eventDate">Event Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="eventCode"><span jhiTranslate="rfpApp.rfpEvent.eventCode">Event Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rfpLocation.id"><span jhiTranslate="rfpApp.rfpEvent.rfpLocation">Rfp Location</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rfpEvent of rfpEvents ;trackBy: trackId">
+                <td><a [routerLink]="['/rfp-event', rfpEvent.id, 'view' ]">{{rfpEvent.id}}</a></td>
+                <td>{{rfpEvent.eventDate | date:'mediumDate'}}</td>
+                <td>{{rfpEvent.eventCode}}</td>
+                <td>
+                    <div *ngIf="rfpEvent.rfpLocation">
+                        <a [routerLink]="['../rfp-location', rfpEvent.rfpLocation?.id, 'view' ]" >{{rfpEvent.rfpLocation?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/rfp-event', rfpEvent.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/rfp-event', rfpEvent.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rfp-event/'+ rfpEvent.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="rfpEvents && rfpEvents.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rfpLocation">
+            <h2><span jhiTranslate="rfpApp.rfpLocation.detail.title">Rfp Location</span> {{rfpLocation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rfpApp.rfpLocation.locationName">Location Name</span></dt>
+                <dd>
+                    <span>{{rfpLocation.locationName}}</span>
+                </dd>
+                <dt><span jhiTranslate="rfpApp.rfpLocation.runDayOfWeek">Run Day Of Week</span></dt>
+                <dd>
+                    <span>{{rfpLocation.runDayOfWeek}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rfp-location', rfpLocation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

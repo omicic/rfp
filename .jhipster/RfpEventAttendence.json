@@ -1,0 +1,32 @@
+{
+    "name": "RfpEventAttendence",
+    "fields": [
+        {
+            "fieldName": "attendenceDate",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "rfpUser",
+            "otherEntityName": "rfpUser",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "rfpEvent",
+            "otherEntityName": "rfpEvent",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190225092856",
+    "entityTableName": "rfp_event_attendence",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

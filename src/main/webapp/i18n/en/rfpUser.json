@@ -1,0 +1,23 @@
+{
+    "rfpApp": {
+        "rfpUser": {
+            "home": {
+                "title": "Rfp Users",
+                "createLabel": "Create a new Rfp User",
+                "createOrEditLabel": "Create or edit a Rfp User"
+            },
+            "created": "A new Rfp User is created with identifier {{ param }}",
+            "updated": "A Rfp User is updated with identifier {{ param }}",
+            "deleted": "A Rfp User is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Rfp User {{ id }}?"
+            },
+            "detail": {
+                "title": "Rfp User"
+            },
+            "userName": "User Name",
+            "location": "Location",
+            "rfpEventAttendance": "Rfp Event Attendance"
+        }
+    }
+}

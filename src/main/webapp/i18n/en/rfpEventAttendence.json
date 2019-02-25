@@ -1,0 +1,23 @@
+{
+    "rfpApp": {
+        "rfpEventAttendence": {
+            "home": {
+                "title": "Rfp Event Attendences",
+                "createLabel": "Create a new Rfp Event Attendence",
+                "createOrEditLabel": "Create or edit a Rfp Event Attendence"
+            },
+            "created": "A new Rfp Event Attendence is created with identifier {{ param }}",
+            "updated": "A Rfp Event Attendence is updated with identifier {{ param }}",
+            "deleted": "A Rfp Event Attendence is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Rfp Event Attendence {{ id }}?"
+            },
+            "detail": {
+                "title": "Rfp Event Attendence"
+            },
+            "attendenceDate": "Attendence Date",
+            "rfpUser": "Rfp User",
+            "rfpEvent": "Rfp Event"
+        }
+    }
+}

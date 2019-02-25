@@ -1,0 +1,23 @@
+{
+    "rfpApp": {
+        "rfpLocation": {
+            "home": {
+                "title": "Rfp Locations",
+                "createLabel": "Create a new Rfp Location",
+                "createOrEditLabel": "Create or edit a Rfp Location"
+            },
+            "created": "A new Rfp Location is created with identifier {{ param }}",
+            "updated": "A Rfp Location is updated with identifier {{ param }}",
+            "deleted": "A Rfp Location is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Rfp Location {{ id }}?"
+            },
+            "detail": {
+                "title": "Rfp Location"
+            },
+            "locationName": "Location Name",
+            "runDayOfWeek": "Run Day Of Week",
+            "rfpEvent": "Rfp Event"
+        }
+    }
+}

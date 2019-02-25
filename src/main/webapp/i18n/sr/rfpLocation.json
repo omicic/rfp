@@ -1,0 +1,23 @@
+{
+    "rfpApp": {
+        "rfpLocation": {
+            "home": {
+                "title": "Rfp Locations",
+                "createLabel": "Kreiraj novi Rfp Location",
+                "createOrEditLabel": "Kreirajte ili izmenite Rfp Location"
+            },
+            "created": "Kreiran je novi Rfp Location pod nazivom {{ param }}",
+            "updated": "Rfp Location pod nazivom {{ param }} je ažuriran",
+            "deleted": "Rfp Location pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Rfp Location pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Rfp Location"
+            },
+            "locationName": "Location Name",
+            "runDayOfWeek": "Run Day Of Week",
+            "rfpEvent": "Rfp Event"
+        }
+    }
+}

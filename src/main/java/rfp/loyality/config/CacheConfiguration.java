@@ -40,6 +40,13 @@ public class CacheConfiguration {
             cm.createCache(rfp.loyality.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(rfp.loyality.domain.PersistentToken.class.getName(), jcacheConfiguration);
             cm.createCache(rfp.loyality.domain.User.class.getName() + ".persistentTokens", jcacheConfiguration);
+            cm.createCache(rfp.loyality.domain.RfpUser.class.getName(), jcacheConfiguration);
+            cm.createCache(rfp.loyality.domain.RfpUser.class.getName() + ".rfpEventAttendances", jcacheConfiguration);
+            cm.createCache(rfp.loyality.domain.RfpEventAttendence.class.getName(), jcacheConfiguration);
+            cm.createCache(rfp.loyality.domain.RfpEvent.class.getName(), jcacheConfiguration);
+            cm.createCache(rfp.loyality.domain.RfpEvent.class.getName() + ".rfpEventAttendances", jcacheConfiguration);
+            cm.createCache(rfp.loyality.domain.RfpLocation.class.getName(), jcacheConfiguration);
+            cm.createCache(rfp.loyality.domain.RfpLocation.class.getName() + ".rfpEvents", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
